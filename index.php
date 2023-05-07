@@ -38,7 +38,8 @@
                 <th></th>
               </tr>
             </thead>
-            <?php $getFruit = selectedFruits();
+            <?php
+            $getFruit = selectedFruits();
             while ($fruit = $getFruit->fetch(PDO::FETCH_ASSOC)) { ?>
               <tbody class="text-sm divide-y divide-gray-100">
                 <tr>
