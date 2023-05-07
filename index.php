@@ -59,7 +59,7 @@
                     <div class="font-medium text-stone-500"><?= $fruit['fruit_updated'] ?></div>
                   </td>
                   <td class="p-2">
-                    <a>
+                    <a href='#'>
                       <div class="font-medium text-gray-800">Edit</div>
                     </a>
                   </td>
