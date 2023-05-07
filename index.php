@@ -72,10 +72,6 @@
             <?php } ?>
           </table>
         </div>
-        <div class="flex justify-end font-bold space-x-4 text-2xl border-t border-gray-100 px-5 py-4">
-          <div>Total</div>
-          <div class="text-blue-600">₱<span x-text="total.toFixed(2)"></span></div>
-        </div>
       </div>
     </div>
   </section>
