@@ -4,22 +4,19 @@ require '_functions.php';
 $fruitid = $_GET['id'];
 // echo $fruitid;
 
-$searchFruit = searchFruit($fruitid);
+$searchFruit = updateFruit($fruitid);
 $row = $searchFruit->Fetch(PDO::FETCH_ASSOC);
 
 if (isset($_POST['fruitedit'])) {
-  $fruitname = $_POST['fruitname'];
-  $fruitqty = $_POST['fruitqty'];
+  $updatename = $_POST['updatename'];
+  $updateqty = $_POST['updateqty'];
 
-  $request = createFruit($fruitname, $fruitqty);
+  $sql = connection()->prepare("UPDATE fruits SET fruit_name = :updatename, fruit_qty = :updateqty WHERE fruit_id = :fruitid");
+  $sql->execute(['updatename' => $updatename, 'updateqty' => $updateqty, 'fruitid' => $fruitid]);
 
-  if ($request == true) {
-    header("location: index.php?fruit=added");
-  } else {
-    header("location: index.php?fruit=error");
-  }
-} else {
-  header("location: index.php?fruit=invalid");
+  header("Location: index.php");
+
+  return $sql;
 }
 
 ?>
@@ -28,9 +25,9 @@ if (isset($_POST['fruitedit'])) {
 
 <body>
   <form method='post'>
-    <input type='text' name='fruitname' placeholder='Fruit name' value='<?= $row["fruit_name"] ?>'>
-    <input type='text' name='fruitqty' placeholder='Quantity' value='<?= $row["fruit_qty"] ?>'>
-    <input type='submit' name='fruitedit' value='Edit'>
+    <input type='text' name='updatename' placeholder='Fruit name' value='<?= $row["fruit_name"] ?>'>
+    <input type='text' name='updateqty' placeholder='Quantity' value='<?= $row["fruit_qty"] ?>'>
+    <input type='submit' name='fruitedit' value='Save'>
   </form>
 </body>
 

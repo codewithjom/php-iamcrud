@@ -68,10 +68,10 @@
                       <div class="font-medium text-stone-500"><?= $row['fruit_updated'] ?></div>
                     </td>
                     <td class="p-2">
-                      <a href='fruit_update.php?id=<?= $row['fruit_id'] ?>' class="font-medium text-gray-800">Edit</a>
+                      <a href="fruit_update.php?id=<?= $row['fruit_id'] ?>" class="font-medium text-gray-800">Edit</a>
                     </td>
                     <td class="p-2">
-                      <a href='fruit_delete.php?id=<?= $row['fruit_id'] ?>' class="font-medium text-red-500">Delete</a>
+                      <a href="fruit_delete.php?id=<?= $row['fruit_id'] ?>" class="font-medium text-red-500">Delete</a>
                     </td>
                   </tr>
                 </tbody>
@@ -128,12 +128,6 @@
                   </td>
                   <td class="p-2">
                     <div class="font-medium text-stone-500"><?= $fruit['fruit_updated'] ?></div>
-                  </td>
-                  <td class="p-2">
-                    <a href='#' class="font-medium text-gray-800">Edit</a>
-                  </td>
-                  <td class="p-2">
-                    <a href='#' class="font-medium text-red-500">Delete</a>
                   </td>
                 </tr>
               </tbody>

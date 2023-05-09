@@ -6,6 +6,7 @@ function connection()
   $dbConnection = new PDO('mysql:dbname=php_iamcrud;host=localhost;charset=utf8mb4', 'root', '');
   $dbConnection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
   $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
   return $dbConnection;
 }
 
@@ -13,6 +14,7 @@ function selectedFruits()
 {
   $sql = connection()->prepare("SELECT * FROM fruits Order By fruit_id ASC");
   $sql->execute();
+
   return $sql;
 }
 
@@ -38,11 +40,10 @@ function searchFruit($searchFruit)
   return $sql;
 }
 
-function searchFruit($fruitid)
+function updateFruit($fruitid)
 {
   $sql = connection()->prepare("SELECT * FROM fruits WHERE fruit_id LIKE :fruit_id");
   $sql->execute(['fruit_id' => $fruitid]);
+
   return $sql;
 }
-
-function updateFruit()
