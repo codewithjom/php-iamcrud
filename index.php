@@ -16,7 +16,7 @@
       <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
         <header class="px-5 py-4 border-b border-gray-100">
           <div class='flex justify-between'>
-            <span class="font-semibold text-gray-800">Fruits</span>
+            <span class="font-semibold text-3xl text-gray-800">Fruits</span>
             <form method='post'>
               <input type='text' name='searchfruit' class='border rounded-md py-1 px-2'>
               <button type='submit' name='search' class='border px-4 py-1 text-white bg-blue-500 hover:bg-blue-700'>Search</button>
@@ -127,7 +127,7 @@
                     <div class="text-left font-medium text-stone-500"><?= $fruit['fruit_created'] ?></div>
                   </td>
                   <td class="p-2">
-                    <div class="font-medium text-stone-500"><?= $fruit['fruit_updated'] ?></div>
+                    <div class="font-medium text-purple-500"><?= $fruit['fruit_updated'] ?></div>
                   </td>
                 </tr>
               </tbody>
