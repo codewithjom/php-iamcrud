@@ -47,3 +47,11 @@ function updateFruit($fruitid)
 
   return $sql;
 }
+
+function deleteFruit($fruitid)
+{
+  $sql = connection()->prepare("SELECT * FROM fruits WHERE fruit_id LIKE :fruit_id");
+  $sql->execute(['fruit_id' => $fruitid]);
+
+  return $sql;
+}
